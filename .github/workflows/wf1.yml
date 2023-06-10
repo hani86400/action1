@@ -36,4 +36,8 @@ jobs:
           echo test, and deploy your project.
           echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"        
           ls -la 
-          find .
+          ip a
+          pwd
+          cat README.md
+          hostname
+
