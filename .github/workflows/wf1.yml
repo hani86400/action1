@@ -42,4 +42,15 @@ jobs:
           cat README.md
           cat hostname.txt
           
+      - name: Commit changes
+        run: |
+          T_MSG=$(date +%Y_%m_%d_%H_%M_%S)
+          git config --global user.email "no-reply@github.com"
+          git config --global user.name "GitHub Actions"
+          git add hostname.txt
+          git commit -m "$T_MSG"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
 
