@@ -34,10 +34,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          hostname > hostname.txt
           echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"        
           ls -la 
           ip a
           pwd
           cat README.md
-          hostname
+          cat hostname.txt
+          
 
